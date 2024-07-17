@@ -64,7 +64,17 @@ Note that `/input/` is gitignored, so if you want to ensure your data is not acc
 After setup is done, run this in your bash terminal:
 
 ```
+# I did not use this approach:
 npm run bloggerconvert <filename>
+```
+
+After disabling network connection, in WSL (not Git Bash):
+
+```
+cd /c/code/blogger-archive-converter/
+node index.js temp/blogger_archive.xml
+rm -rf output
+rm -rf temp
 ```
 
 ...where `<filename>` is either a downloaded XML file from Blogger's interface, or an .atom file from Google Takeout (eg. `node index.js blog-01-01-2018.xml`).

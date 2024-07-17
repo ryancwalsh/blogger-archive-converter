@@ -304,16 +304,20 @@ function processComment(item) {
   var comment = {
     'pid':          item['gd:extendedProperty'][0].value.slice(4),
     'id':           helpers.getPostId(item.id),
-    'parentItem':   helpers.getPostId(item['thr:in-reply-to'].ref),
+    'parentItem':   item['thr:in-reply-to'] ? helpers.getPostId(item['thr:in-reply-to'].ref) : null,
     'author':       helpers.tidyAuthor(item.author),
     'published':    helpers.tidyDate(item.published),
     'updated':      helpers.tidyDate(item.updated),
     'content':      item.content['$t']
   }
 
+  // console.log({blogPosts});
   // Add each comment to the relevant blog post in the main data.
   // The original data seems to be chronological so we don't need to sort 
-  blogPosts[blogPosts.findIndex(x => x.id === comment.parentItem)].comments.push(comment);
+  const index = blogPosts.findIndex(x => x.id === comment.parentItem);
+  if (index && blogPosts[index]) {
+    blogPosts[index].comments.push(comment);
+  }
 
   // Add to the separate commenter and comment data
   allCommenters.push(helpers.tidyAuthor(item.author));
