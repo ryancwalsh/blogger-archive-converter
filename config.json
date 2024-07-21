@@ -1,7 +1,7 @@
 { 
 
   "//structure": "Can be 'tree' or 'flat'",
-	"structure": "tree",
+	"structure": "flat",
 
   "//encodeImages": "currently not wired up - base64 the images",
 	"encodeImages": false,

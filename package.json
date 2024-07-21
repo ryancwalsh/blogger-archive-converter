@@ -7,14 +7,20 @@
     "cheerio": "1.0.0-rc.12",
     "commander": "2.13.x",
     "count-files": "2.6.x",
+    "dayjs": "^1.11.12",
     "minimist": "1.2.6",
     "mkdirp": "1.0.0",
     "rimraf": "2.6.x",
     "single-line-log": "1.1.x",
-    "xml2json": "0.12.x",
-    "snyk": "^1.996.0"
+    "snyk": "^1.996.0",
+    "xml2json": "0.12.x"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/node": "^20.14.11",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3"
+  },
   "scripts": {
     "bloggerconvert": "./index.js",
     "pretest": "npm run bloggerconvert ./test-data/test-blog-with-simple-default-theme.xml",
@@ -24,5 +30,6 @@
   },
   "author": "Ben Buchanan",
   "license": "MIT",
-  "snyk": true
+  "snyk": true,
+  "keywords": []
 }
