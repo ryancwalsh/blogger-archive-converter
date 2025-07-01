@@ -12,7 +12,7 @@
     "mkdirp": "1.0.0",
     "rimraf": "2.6.x",
     "single-line-log": "1.1.x",
-    "snyk": "^1.996.0",
+    "snyk": "^1.1297.3",
     "xml2json": "0.12.x"
   },
   "devDependencies": {
